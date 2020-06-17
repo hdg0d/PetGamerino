@@ -1,33 +1,34 @@
 package com.cs246.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.cs246.game.Screens.PlayScreen;
 
 public class PetGame extends Game {
-	GameScreen gameScreen;
-	public void create () {
-		gameScreen = new GameScreen();
-		setScreen(gameScreen);
-	}
+	public SpriteBatch batch;
 
 	@Override
-	public void dispose() {
-		gameScreen.dispose();
+	public void create () {
+		//gameScreen = new GameScreen();
+		batch = new SpriteBatch();
+		setScreen(new PlayScreen(this));
 	}
+
+	//@Override
+	//public void dispose() {
+	    //super.render();
+		//gameScreen.dispose();
+	//}
 
 	@Override
 	public void render() {
 		super.render();
 	}
 
-	@Override
-	public void resize(int width, int height) {
-		gameScreen.resize(width, height);
-	}
+	//@Override
+	//public void resize(int width, int height) {
+	//	gameScreen.resize(width, height);
+	//}
 }
 
 
