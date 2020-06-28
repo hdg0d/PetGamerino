@@ -5,6 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.cs246.game.Screens.PlayScreen;
 
 public class PetGame extends Game {
+	public static final int V_WIDTH = 360;
+	public static final int V_HEIGHT = 640;
+
 	public SpriteBatch batch;
 
 	@Override

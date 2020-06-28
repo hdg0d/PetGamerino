@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.5" orientation="orthogonal" renderorder="right-down" width="135" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="9">
+ <tileset firstgid="1" source="../../../../Documents/background_placeholder.tsx"/>
+ <layer id="1" name="background" width="135" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENACAQA7DlFKAABSjAvzBEkP3apJNkVFWLl6pq+VZVLT+qquVXVVVVVVVVVVVVVVVVPz7gMKBO
+  </data>
+ </layer>
+ <layer id="8" name="background2" width="135" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztklFtAzEMQFsERVAEQzAEQzAEQzAEAzIEQzAgQ1Amk6Y7qXLtxE5ySW73nvR+Ejt2Ep9OAAAA++S8CGM4C2di5t6OQM/3j54ve2NG+tLz7ZmNfcFsgEWvty85n9kYC7MBFt63r/mT0v+dZTZm6GEEuXu3eA9mY58wG4+1PH0cAWbjsZanjyMQmQ3v2+Xyve+7l9lo3VvJeVv8YypHrl8WJRdhas+K0yjNKyF6B29uyz488aV3yJ0lc+T6dVFyFab2rDiN0rzcGdG43Bk1/eX68MZFe/T8Y+RNnoQr1rq2Z8VpRPNStXL53lzPHWvIndWqx9Kzrdhn4Yq1ru1ZcRrevFQNb92aM6L3SuF949oeW/siXLHWtT0rTiOVW2OLWq3u2OvOW/vq9B5vnIa3XtSetSL37dXHFr45vadFXGs1eta3ehjRRyvf/6ErM/Qwuo8aPxANPxENvxANvxENfxARg94QEREREREREREREfHPX27nHCU=
+  </data>
+ </layer>
+ <layer id="9" name="outline" width="135" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt1ksKgzAQAFAX7nsCT9AT9P4X68IWSmhNajQf8x4MCH5whpnRaQKAPj1eQR1zEC25B0FZJXtj2XH9t6CMkrW/7bjns2db22tXF+4N9eet9d6YfxwD9ZTaG7n/DDV3Wuu79Sy99AZtGmFWYrMxQg1Co+5L4lJ6I/d8L1Lev+f8artq7WJ9c2TeZ8xY+LyUGf/nm2KmtvWef05vsE3tAAAAAAAAAAAAAABg9QTIJgQi
+  </data>
+ </layer>
+ <layer id="3" name="graphics" width="135" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJgDAAAMGBCUxgAhMsgQmWwAT2BxN8gXEHNwYAAAAAAAAAAAAAAAAAAADA/g6Np8ZL461xanw0Lo2vxk/jD4XiGBU=
+  </data>
+ </layer>
+ <objectgroup id="5" name="ground">
+  <object id="6" x="0" y="496" width="2160" height="144"/>
+ </objectgroup>
+ <objectgroup id="6" name="walls">
+  <object id="7" x="0" y="0" width="16" height="496"/>
+  <object id="8" x="2144" y="0" width="16" height="496"/>
+ </objectgroup>
+</map>
