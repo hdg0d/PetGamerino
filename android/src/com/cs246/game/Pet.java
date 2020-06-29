@@ -17,6 +17,7 @@ public class Pet {
     //Booleans for if they have health conditions
     private Boolean hasParasite;
     private Boolean hasDistemper;
+    private Boolean hasRabies;
 
     //General info
     private String name;
@@ -36,6 +37,14 @@ public class Pet {
         vaccinated = false;
         fed = false;
         exercised = false;
+    }
+
+    public Boolean getHasRabies() {
+        return hasRabies;
+    }
+
+    public void setHasRabies(Boolean hasRabies) {
+        this.hasRabies = hasRabies;
     }
 
     public Boolean getExam() {
