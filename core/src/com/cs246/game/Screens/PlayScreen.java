@@ -6,29 +6,18 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.cs246.game.Avitar;
+import com.cs246.game.Sprites.Avitar;
 import com.cs246.game.PetGame;
 import com.cs246.game.Scenes.Hud;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import com.cs246.game.Tools.B2WorldCreator;
 
 public class PlayScreen implements Screen {
 
@@ -72,30 +61,7 @@ public class PlayScreen implements Screen {
         //touchpoint = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
         //Rectangle lbut = new Rectangle(100, 100, 100, 100);
         controller = new Controller();
-
-        BodyDef bdef = new BodyDef();
-        PolygonShape shape = new PolygonShape();
-        FixtureDef fdef = new FixtureDef();
-        Body body;
-
-        for(MapObject object : map.getLayers().get(0).getObjects().getByType(RectangleMapObject.class)){
-            Rectangle rect = ((RectangleMapObject) object).getRectangle();
-            bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getWidth() /2) /PetGame.PPM, (rect.getY() + rect.getHeight() / 2)/PetGame.PPM);
-            body = world.createBody(bdef);
-            shape.setAsBox(rect.getWidth() / 2 /PetGame.PPM, rect.getHeight() / 2 /PetGame.PPM);
-            fdef.shape = shape;
-            body.createFixture(fdef);
-        }
-        for(MapObject object : map.getLayers().get(1).getObjects().getByType(RectangleMapObject.class)){
-            Rectangle rect = ((RectangleMapObject) object).getRectangle();
-            bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getWidth() /2)+ 6 * 100/PetGame.PPM, (rect.getY() + rect.getHeight() / 2)/PetGame.PPM);
-            body = world.createBody(bdef);
-            shape.setAsBox(rect.getWidth() / 2 /PetGame.PPM, rect.getHeight() / 2 /PetGame.PPM);
-            fdef.shape = shape;
-            body.createFixture(fdef);
-        }
+        new B2WorldCreator(world, map);
     }
 
     @Override
@@ -186,9 +152,19 @@ public class PlayScreen implements Screen {
     public void hide() {
 
     }
+/*
+    public boolean gameOver(){
+        if(PetGame.isStart){
 
+        }
+    }
+*/
     @Override
     public void dispose() {
-
+        map.dispose();
+        renderer.dispose();
+        world.dispose();
+        b2dr.dispose();
+        hud.dispose();
     }
 }

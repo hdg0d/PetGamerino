@@ -1,10 +1,11 @@
-package com.cs246.game;
+package com.cs246.game.Sprites;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.cs246.game.PetGame;
 
 public class Avitar extends Sprite {
     public World world;
@@ -18,7 +19,7 @@ public class Avitar extends Sprite {
 
     public void defineAvitar() {
         BodyDef bdef = new BodyDef();
-        bdef.position.set(200/PetGame.PPM, 200/PetGame.PPM);
+        bdef.position.set(200/ PetGame.PPM, 200/PetGame.PPM);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
         FixtureDef fdef = new FixtureDef();

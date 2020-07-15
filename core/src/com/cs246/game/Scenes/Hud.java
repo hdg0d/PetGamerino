@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.cs246.game.PetGame;
@@ -16,7 +17,7 @@ import java.text.DateFormat;
 //THE FOLLOWING LABELS ARE PLACEHOLDERS AND ARE TO TEST THE HUD.
 // THEY ARE INTENDED TO BE CHANGED TO SUIT THIS PROGRAM
 
-public class Hud {
+public class Hud implements Disposable{
     public Stage stage;
     private Viewport viewport;
     private Integer worldTimer;
@@ -60,4 +61,8 @@ public class Hud {
 
     }
 
+    @Override
+    public void dispose() {
+        stage.dispose();
+    }
 }
